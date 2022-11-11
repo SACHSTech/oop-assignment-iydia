@@ -19,36 +19,36 @@ import java.io.*;
         System.out.println("〣 WELCOME TO SEPHORA 〣");
         System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣");
 
-        // Login
-        login();
+        // Create account
+        createAccount();
+
     }
     
-    private static void login() throws IOException {
+    private static void createAccount() throws IOException {
         boolean accountCreated = false;
         boolean confirmRedo = false;
 
         while(!accountCreated) {
             System.out.println("\nPlease create an account. ");
-            usernamePassword();
+            accountCreation();
             while(!confirmRedo) {
                 System.out.println("Please CONFIRM or REDO: ");
                 String setAccount = keyboard.readLine();
-
                 if(setAccount.equalsIgnoreCase("CONFIRM")) {
                     accountCreated = true;
                     confirmRedo = true;
                 } else if(setAccount.equalsIgnoreCase("REDO")) {
-                    usernamePassword();
+                    accountCreation();
                 }
             }
         }
     }
 
-    private static void usernamePassword() throws IOException {
+    private static void accountCreation() throws IOException {
         System.out.println("\nUsername: ");
-        String username = keyboard.readLine();
+        String setUsername = keyboard.readLine();
         System.out.println("\nPassword: ");
-        String password = keyboard.readLine();
-        System.out.println("\nYour username is (" + username + ") and password is (" + password + ").");
+        String setPassword = keyboard.readLine();
+        System.out.println("\nYour username is (" + setUsername + ") and password is (" + setPassword + ").");
     }
  }
