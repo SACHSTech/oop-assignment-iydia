@@ -9,14 +9,12 @@ import java.io.*;
  * These points can be used to redeem store credit and pay for future orders. 
  */
 
-
  public class Main {
+    // Import BufferedReader
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        // Import BufferedReader
-
-        // Title
+        // Print title
         System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣");
         System.out.println("〣 WELCOME TO SEPHORA 〣");
         System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣");
