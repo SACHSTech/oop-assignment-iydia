@@ -9,7 +9,9 @@ import java.io.*;
  * These points can be used to redeem store credit and pay for future orders. 
  */
 
+
  public class Main {
+    static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
         // Import BufferedReader
@@ -20,29 +22,35 @@ import java.io.*;
         System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣");
 
         // Login
-        Login();
+        login();
     }
     
-    private static void Login() throws IOException {
+    private static void login() throws IOException {
         boolean accountCreated = false;
         boolean confirmRedo = false;
 
         while(!accountCreated) {
-            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("\nPlease create an account. ");
-            System.out.println("\nUsername: ");
-            String username = keyboard.readLine();
-            System.out.println("\nPassword: ");
-            String password = keyboard.readLine();
-            System.out.println("\nYour username is (" + username + ") and password is (" + password + ").");
-            System.out.println("Please CONFIRM or REDO: ");
-            String setAccount = keyboard.readLine();
-            if(setAccount.equalsIgnoreCase("CONFIRM")) {
-                accountCreated = true;
-                confirmRedo = true;
-            } else if (setAccount.equalsIgnoreCase("CONFIRM")) {
-                
+            usernamePassword();
+            while(!confirmRedo) {
+                System.out.println("Please CONFIRM or REDO: ");
+                String setAccount = keyboard.readLine();
+
+                if(setAccount.equalsIgnoreCase("CONFIRM")) {
+                    accountCreated = true;
+                    confirmRedo = true;
+                } else if(setAccount.equalsIgnoreCase("REDO")) {
+                    usernamePassword();
+                }
             }
         }
+    }
+
+    private static void usernamePassword() throws IOException {
+        System.out.println("\nUsername: ");
+        String username = keyboard.readLine();
+        System.out.println("\nPassword: ");
+        String password = keyboard.readLine();
+        System.out.println("\nYour username is (" + username + ") and password is (" + password + ").");
     }
  }
