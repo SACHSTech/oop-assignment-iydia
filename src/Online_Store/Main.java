@@ -13,6 +13,10 @@ import java.io.*;
     // Import BufferedReader
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
+    // Variables
+    static boolean accountCreated = false;
+    static boolean confirmRedo = false;
+
     public static void main(String[] args) throws IOException {
         // Print title
         System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣");
@@ -20,13 +24,6 @@ import java.io.*;
         System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣");
 
         // Create account
-        createAccount();
-    }
-    
-    private static void createAccount() throws IOException {
-        boolean accountCreated = false;
-        boolean confirmRedo = false;
-
         while(!accountCreated) {
             System.out.println("\nPlease create an account. ");
             accountCreation();
@@ -42,7 +39,7 @@ import java.io.*;
             }
         }
     }
-
+    
     private static void accountCreation() throws IOException {
         System.out.println("\nUsername: ");
         String setUsername = keyboard.readLine();
