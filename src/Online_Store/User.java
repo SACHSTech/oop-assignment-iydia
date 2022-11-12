@@ -4,10 +4,15 @@ public class User {
     // Instance Variables
     private static String username;
     private static String password;
+    private static boolean isMember;
+    private static int rewardsPoints;
 
-    public User(String user, String pass){
+    public User(String user, String pass, boolean memberTF, int points){
         username = user;
         password = pass;
+        isMember = memberTF;
+        rewardsPoints = points;
+
     }
 
     /**
@@ -24,6 +29,14 @@ public class User {
      */
     public static String getPassword(){
         return password;
+    }
+
+    /**
+     * Getter method for whether the user is a member or not
+     * @return whether the user is a member or not
+     */
+    public static boolean getMembershipStatus(){
+        return isMember;
     }
     
 }

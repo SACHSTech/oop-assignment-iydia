@@ -59,7 +59,7 @@ import java.io.*;
         System.out.println("\nPassword: ");
         String pass = keyboard.readLine();
         // Creates a new user with the user's input
-        User userInput = new User(user, pass);
+        User userInput = new User(user, pass, false, 0);
         System.out.println("\nYour username is (" + User.getUsername() + ") and password is (" + User.getPassword() + ").");
     }
  }

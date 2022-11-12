@@ -1,14 +1,12 @@
 package Online_Store;
 
 public class Member extends User{
-    private int rewardsPoints;
+    private int rewards;
 
-    public Member(String user, String pass) {
-        super(user, pass);
+    public Member(String user, String pass, boolean memberTF, int points) {
+        super(user, pass, memberTF, points);
+        
     }
 
-    
-
-
-    
+    // for every placeorder, rewardspoints += 10 * price or something
 }
