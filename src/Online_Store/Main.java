@@ -14,14 +14,18 @@ import java.io.*;
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     // Variables
+    public static String user;
+    public static String pass;
     static boolean accountCreated = false;
     static boolean confirmRedo = false;
+    static int pageNum;
 
     public static void main(String[] args) throws IOException {
+
         // Print title
-        System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣");
-        System.out.println("〣 WELCOME TO SEPHORA 〣");
-        System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣");
+        System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣〣");
+        System.out.println("〣 WELCOME TO THE STORE 〣");
+        System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣〣");
 
         // Create account
         while(!accountCreated) {
@@ -38,13 +42,24 @@ import java.io.*;
                 }
             }
         }
+
+        // Class exploration
+        System.out.println("\nWelcome, " + User.getUsername());
+        System.out.println("\n(1) Shopping Bag");
+        System.out.println("(2) My Account");
+        System.out.println("(3) User profile");
+        System.out.println("(4) Membership");
+        System.out.println("\nEnter the number to access each page:");
+        pageNum = Integer.parseInt(keyboard.readLine());
     }
     
     private static void accountCreation() throws IOException {
         System.out.println("\nUsername: ");
-        String setUsername = keyboard.readLine();
+        String user = keyboard.readLine();
         System.out.println("\nPassword: ");
-        String setPassword = keyboard.readLine();
-        System.out.println("\nYour username is (" + setUsername + ") and password is (" + setPassword + ").");
+        String pass = keyboard.readLine();
+        // Creates a new user with the user's input
+        User userInput = new User(user, pass);
+        System.out.println("\nYour username is (" + User.getUsername() + ") and password is (" + User.getPassword() + ").");
     }
  }
