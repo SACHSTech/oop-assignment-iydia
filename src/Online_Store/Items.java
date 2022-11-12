@@ -11,7 +11,6 @@ public class Items {
         price = thePrice;
         brand = theBrand;
         size = theSize;
-
     }
     
 }

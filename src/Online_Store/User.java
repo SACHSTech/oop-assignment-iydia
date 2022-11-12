@@ -5,13 +5,11 @@ public class User {
     private static String username;
     private static String password;
     private static boolean isMember;
-    private static int rewardsPoints;
 
-    public User(String user, String pass, boolean memberTF, int points){
+    public User(String user, String pass, boolean memberTF){
         username = user;
         password = pass;
         isMember = memberTF;
-        rewardsPoints = points;
 
     }
 
@@ -38,5 +36,4 @@ public class User {
     public static boolean getMembershipStatus(){
         return isMember;
     }
-    
 }

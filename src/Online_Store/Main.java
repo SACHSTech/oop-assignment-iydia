@@ -2,11 +2,11 @@ package Online_Store;
 import java.io.*;
 
 /**
- * Author: Lydia He
  * Description: This program simulates an online checkout system for an online store.
  * The user can sign in, add items to their order, see the total, place an order, and track their order. 
  * They can view their billing address and see the status of their membership, for every purchase, they get some rewards points. 
  * These points can be used to redeem store credit and pay for future orders. 
+ * Author: L. He
  */
 
  public class Main {
@@ -59,7 +59,7 @@ import java.io.*;
         System.out.println("\nPassword: ");
         String pass = keyboard.readLine();
         // Creates a new user with the user's input
-        User userInput = new User(user, pass, false, 0);
+        User userInput = new User(user, pass, false);
         System.out.println("\nYour username is (" + User.getUsername() + ") and password is (" + User.getPassword() + ").");
     }
  }
