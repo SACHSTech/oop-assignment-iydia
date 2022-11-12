@@ -1,5 +1,5 @@
 package Online_Store;
 
-public class Account {
+public class Cart {
     
 }
