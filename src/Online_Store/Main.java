@@ -21,7 +21,6 @@ import java.io.*;
 
         // Create account
         createAccount();
-
     }
     
     private static void createAccount() throws IOException {
