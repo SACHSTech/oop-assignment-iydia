@@ -49,7 +49,7 @@ import java.io.*;
         System.out.println("(2) My Account");
         System.out.println("(3) User profile");
         System.out.println("(4) Membership");
-        System.out.println("\nEnter the number to access each page:");
+        System.out.println("\nEnter the number to access each page:"); // How to add a way to go back to this menu?
         pageNum = Integer.parseInt(keyboard.readLine());
     }
     
