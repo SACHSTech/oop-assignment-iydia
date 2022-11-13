@@ -23,9 +23,9 @@ import java.io.*;
     public static void main(String[] args) throws IOException {
 
         // Print title
-        System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣〣");
-        System.out.println("〣 WELCOME TO THE STORE 〣");
-        System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣〣");
+        System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣");
+        System.out.println("〣 WELCOME TO THE ONLINE JEWELLRY STORE 〣");
+        System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣");
 
         // Create account
         while(!accountCreated) {
@@ -47,8 +47,6 @@ import java.io.*;
         System.out.println("\nWelcome, " + User.getUsername());
         System.out.println("\n(1) Shopping Bag");
         System.out.println("(2) My Account");
-        System.out.println("(3) User profile");
-        System.out.println("(4) Membership");
         System.out.println("\nEnter the number to access each page:"); // How to add a way to go back to this menu?
         pageNum = Integer.parseInt(keyboard.readLine());
     }
