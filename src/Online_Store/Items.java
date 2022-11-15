@@ -5,12 +5,14 @@ public class Items {
     private String size;
     private int quantity;
     private double price;
+    public double totalPrice;
 
     public Items(String theName, String theSize, int theQuantity, double thePrice){
         name = theName;
         size = theSize;
         quantity = theQuantity;
         price = thePrice;
+        totalPrice += price;
     }
     
     /**
