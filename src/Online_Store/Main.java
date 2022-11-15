@@ -49,6 +49,14 @@ import java.io.*;
         System.out.println("(2) My Account");
         System.out.println("\nEnter the number to access each page:"); // How to add a way to go back to this menu?
         pageNum = Integer.parseInt(keyboard.readLine());
+
+        if(pageNum != -1){
+            if(pageNum == 1){
+                System.out.println("Shopping Bag: ");
+            } else if(pageNum == 2){
+                System.out.println("My Account: ");
+            }
+        }
     }
     
     private static void accountCreation() throws IOException {
