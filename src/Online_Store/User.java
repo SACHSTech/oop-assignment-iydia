@@ -14,7 +14,7 @@ public class User {
      * Getter method for the user's username 
      * @return user's username
      */
-    public static String getUsername(){
+    public String getUsername(){
         return username;
     }
 
@@ -22,7 +22,7 @@ public class User {
      * Getter method for user's password
      * @return user's password
      */
-    public static String getPassword(){
+    public String getPassword(){
         return password;
     }
 
