@@ -95,9 +95,8 @@ import java.io.*;
                             Necklace userNecklace = new Necklace(size, quantity, price, material);
                             System.out.println("-----------------------------------------");
                             System.out.println("\n" + userNecklace.toString() + " added to bag.");
-                            System.out.println("Enter 3 to view bag, or 1 to continue shopping");
+                            System.out.println("Enter -1 to return to the menu:");
                             pageNum = Integer.parseInt(keyboard.readLine());
-                              
                         } else if(productsPageNum == 2){
                             System.out.println("\nAll rings: "); // incomplete
                         } else if(productsPageNum == -1){
