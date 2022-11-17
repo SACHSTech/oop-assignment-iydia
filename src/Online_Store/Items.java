@@ -3,6 +3,10 @@ package Online_Store;
 public abstract class Items {
     private int itemNumber;
 
+    /**
+     * Abstract parent class Items with properties that its subclasses share; and itemNumber
+     * @param itemNumber the item number (not amount)
+     */
     public Items(int itemNumber){
         this.itemNumber = itemNumber;
     }
@@ -24,6 +28,9 @@ public abstract class Items {
     // Abstract method for the item's material
     public abstract String getMaterial();
 
+    /**
+     * Method to list all products to the user
+     */
     public static void listProducts(){
         
     }
