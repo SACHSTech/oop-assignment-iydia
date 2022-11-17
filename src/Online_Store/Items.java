@@ -1,15 +1,10 @@
 package Online_Store;
 
-public class Items {
+public abstract class Items {
     private String name;
-    private String size;
-    private int quantity;
-    private double price;
-    public double totalPrice;
 
     public Items(String theName){
         name = theName;
-        totalPrice += price;
     }
     
     /**
@@ -20,27 +15,12 @@ public class Items {
         return name;
     }
 
-    /**
-     * Getter method for the item's size
-     * @return size of the item
-     */
-    public String getSize(){
-        return size;
-    }
+    // Abstract method for the item's size
+    public abstract String getSize();
 
-    /**
-     * Getter method for the item's quantity
-     * @return quantity of the item
-     */
-    public int getQuantity(){
-        return quantity;
-    }
+    // Abstract method for the item's quantity
+    public abstract int getQuantity();
 
-    /**
-     * Getter method for the item's price
-     * @return price of the item
-     */
-    public double getPrice(){
-        return price;
-    }
+    // Abstract method for the item's price
+    public abstract double getPrice();
 }
