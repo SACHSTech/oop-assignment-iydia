@@ -24,8 +24,8 @@ public abstract class Items {
     // Abstract method for the item's material
     public abstract String getMaterial();
 
-    public void listProducts(){
-
+    public static void listProducts(){
+        
     }
     
 }

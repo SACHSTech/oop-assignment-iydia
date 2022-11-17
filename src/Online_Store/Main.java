@@ -43,7 +43,7 @@ import java.io.*;
 
         // Class exploration
         while(pageNum == -1){
-            System.out.println("\nWelcome, ");
+            System.out.println("\nWelcome, " + thisUser.getUsername());
             System.out.println("\n(1) Shop Products");
             System.out.println("(2) My Account");
             System.out.println("(3) Shopping Bag");
@@ -56,8 +56,11 @@ import java.io.*;
                 System.out.println("\nAll products: ");
             } else if(pageNum == 2){
                 System.out.println("\nMy Account: ");
+                System.out.println(thisUser.toString());
             } else if(pageNum == 3){
                 System.out.println("\nShopping Bag: ");
+            } else {
+                pageNum = -1;
             }
         }
     }
