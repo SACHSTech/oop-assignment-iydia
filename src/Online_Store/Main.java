@@ -42,12 +42,17 @@ import java.io.*;
         }
 
         // Class exploration
-        while(pageNum == -1){
-            System.out.println("\nWelcome, " + thisUser.getUsername());
-            System.out.println("\n(1) Shop Products");
-            System.out.println("(2) My Account");
-            System.out.println("(3) Shopping Bag");
-            System.out.println("\nEnter the number to access each page. Enter -1 to return to the menu anytime:"); // How to add a way to go back to this menu?
+        try{
+            while(pageNum == -1){
+                System.out.println("\nWelcome, " + thisUser.getUsername());
+                System.out.println("\n(1) Shop Products");
+                System.out.println("(2) My Account");
+                System.out.println("(3) Shopping Bag");
+                System.out.println("\nEnter the number to access each page. Enter -1 to return to the menu anytime:"); // How to add a way to go back to this menu?
+                pageNum = Integer.parseInt(keyboard.readLine());    
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error! Invalid integer. Try again.");
             pageNum = Integer.parseInt(keyboard.readLine());    
         }
 
@@ -56,7 +61,7 @@ import java.io.*;
                 System.out.println("\nAll products: ");
             } else if(pageNum == 2){
                 System.out.println("\nMy Account: ");
-                System.out.println(thisUser.toString());
+                System.out.println("\n" + thisUser.toString());
             } else if(pageNum == 3){
                 System.out.println("\nShopping Bag: ");
             } else {
