@@ -15,8 +15,6 @@ import java.io.*;
         User thisUser;
 
         // Variables
-        boolean accountCreated = false;
-        boolean confirmRedo = false;
         int pageNum = -1;
         int productsPageNum = -1;
 
@@ -31,7 +29,8 @@ import java.io.*;
         // Print menu where user can access the classes
         try{
             while(pageNum == -1){
-                System.out.println("\nWelcome, " + thisUser.getUsername()); // Just remove this if it doesnt work
+                System.out.println("\n-----------------------------------------");
+                System.out.println("Welcome, " + thisUser.getUsername());
                 System.out.println("\n(1) Shop Products");
                 System.out.println("(2) My Account");
                 System.out.println("(3) Shopping Bag");
@@ -55,7 +54,10 @@ import java.io.*;
                 }
             } else if(pageNum == 2){
                 System.out.println("\nMy Account: ");
-                System.out.println("\n" + thisUser.toString()); // HELP
+                System.out.println("\n" + thisUser.toString());
+                System.out.println("\nEnter any key to return to the menu:");
+                String anyKey = keyboard.readLine();
+                pageNum = -1; // this DOSNT WOERK
             } else if(pageNum == 3){
                 System.out.println("\nShopping Bag: ");
             } else {
@@ -83,7 +85,7 @@ import java.io.*;
         String pass = keyboard.readLine();
         // Creates a new user with the user's input
         User userInput = new User(user, pass);
-        System.out.println("\nYour username is [" + userInput.getUsername() + "] and password is [" + userInput.getPassword() + "].");
+        //System.out.println("\nYour username is [" + userInput.getUsername() + "] and password is [" + userInput.getPassword() + "].");
         return userInput;
     }
 }
