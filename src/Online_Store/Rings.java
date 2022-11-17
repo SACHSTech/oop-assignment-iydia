@@ -19,11 +19,11 @@ public class Rings extends Items{
     }
 
     public int getQuantity() {
-        return 0;
+        return quantity;
     }
 
     public double getPrice() {
-        return 0;
+        return price;
     }
     
     public String getMaterial() {
