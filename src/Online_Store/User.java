@@ -26,4 +26,8 @@ public class User {
         return password;
     }
 
+    public String toString(){
+        return "Your username is [" + username + "] and your password is [" + password + "]";
+    }
+
 }
