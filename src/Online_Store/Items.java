@@ -15,12 +15,14 @@ public abstract class Items {
         return name;
     }
 
-    // Abstract method for the item's size
-    public abstract String getSize();
-
     // Abstract method for the item's quantity
     public abstract int getQuantity();
 
     // Abstract method for the item's price
     public abstract double getPrice();
+
+    // Abstract method for the item's material
+    public abstract String getMaterial();
+
+    
 }

@@ -6,8 +6,9 @@ public class Necklace extends Items{
     private int quantity;
     private double price;
 
-    public Necklace(String name, int quantity, double price, String material) {
+    public Necklace(String name, String size, int quantity, double price, String material) {
         super(name);
+        this.size = size;
         this.quantity = quantity;
         this.price = price;
         this.material = material;
@@ -28,15 +29,21 @@ public class Necklace extends Items{
         return quantity;
     }
 
+    public void setQuantity(int setQuantity){
+        quantity = setQuantity;
+    }
+
     public double getPrice() {
         return price;
     }
     
     public String getMaterial() {
         if (material == "1"){
-            return "Silver";
+            return "Sterling Silver";
         } else if (material == "2"){
             return "Gold";
+        } else if (material == "3"){
+            return "Platinum";
         }
         return material;
     }
