@@ -8,12 +8,13 @@ import java.io.*;
 
  public class Main {
     // Import BufferedReader
-    static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));;
 
     public static void main(String[] args) throws IOException {
+        // Initialize User
+        User thisUser = new User();
+
         // Variables
-        String user;
-        String pass;
         boolean accountCreated = false;
         boolean confirmRedo = false;
         int pageNum = -1;
@@ -26,7 +27,7 @@ import java.io.*;
         // Create account
         while(!accountCreated) {
             System.out.println("\nPlease create an account. ");
-            accountCreation();
+            thisUser.createAccount();
             // make user newUser and set it either before each of the methods is called
             while(!confirmRedo) {
                 System.out.println("Please CONFIRM or REDO: ");
@@ -35,7 +36,7 @@ import java.io.*;
                     accountCreated = true;
                     confirmRedo = true;
                 } else if(setAccount.equalsIgnoreCase("REDO")) {
-                    accountCreation();
+                    thisUser.createAccount();
                 }
             }
         }
@@ -58,14 +59,4 @@ import java.io.*;
             }
         }
     }
-    
-    private static void accountCreation() throws IOException {
-        System.out.println("\nUsername: ");
-        String user = keyboard.readLine();
-        System.out.println("\nPassword: ");
-        String pass = keyboard.readLine();
-        // Creates a new user with the user's input
-        User userInput = new User(user, pass);
-        System.out.println("\nYour username is [" + userInput.getUsername() + "] and password is [" + userInput.getPassword() + "].");
-    }
- }
+}
