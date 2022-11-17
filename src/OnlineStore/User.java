@@ -20,10 +20,6 @@ public class User {
         password = pass;
     }
 
-    // Constructor to initialize new user
-    public User() {
-    }
-
     /**
      * Getter method for the user's username 
      * @return user's username
@@ -45,6 +41,6 @@ public class User {
      * @return the username and password of a user
      */
     public String toString(){
-        return "Your username is [" + username + "] and your password is [" + password + "]";
+        return "Username: " + username + "\nPassword: " + password;
     }
 }

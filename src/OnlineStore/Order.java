@@ -9,6 +9,7 @@ public class Order {
 
     public Order(double theTotal, String theOrderStatus){
         // do something like quantity = items.quantity();
+        // do something like here is your order: and list in numbers and say enter that number if u wanna change anything
         total = theTotal;
         orderStatus = theOrderStatus;
     }
