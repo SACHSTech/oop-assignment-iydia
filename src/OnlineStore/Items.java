@@ -36,11 +36,4 @@ public abstract class Items {
      * @return the material the item is made of
      */
     public abstract String getMaterial();
-
-    /**
-     * Method lists all products to the user
-     */
-    public static void listProducts(){
-        
-    }
 }

@@ -13,9 +13,9 @@ public class User {
      * @param username username of the user
      * @param password password of the user
      */
-    public User(String username, String password){
-        this.username = username;
-        this.password = password;
+    public User(String user, String pass){
+        username = user;
+        password = pass;
     }
 
     // Constructor to initialize new user

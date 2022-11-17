@@ -12,4 +12,5 @@ public class Order {
         total = theTotal;
         orderStatus = theOrderStatus;
     }
+    
 }
