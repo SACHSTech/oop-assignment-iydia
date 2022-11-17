@@ -13,7 +13,9 @@ public class User {
         password = pass;
     }
 
+    // Constructor to initialize new user
     public User() {
+        super();
     }
 
     /**

@@ -43,7 +43,7 @@ import java.io.*;
 
         // Class exploration
         while(pageNum == -1){
-            System.out.println("\nWelcome");
+            System.out.println("\nWelcome, ");
             System.out.println("\n(1) Shopping Bag");
             System.out.println("(2) My Account");
             System.out.println("\nEnter the number to access each page. Enter -1 to return to the menu anytime:"); // How to add a way to go back to this menu?
@@ -55,7 +55,7 @@ import java.io.*;
                 System.out.println("\nShopping Bag: ");
             } else if(pageNum == 2){
                 System.out.println("\nMy Account: ");
-                //System.out.println("\n" + userInput.toString());
+                //System.out.println("\n" + User.toString());
             }
         }
     }
