@@ -1,4 +1,4 @@
-package Online_Store;
+package OnlineStore;
 import java.io.*;
 
 /**
@@ -24,11 +24,10 @@ import java.io.*;
         System.out.println("〣  WELCOME TO THE JEWELLRY STORE 〣");
         System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣");
 
-        // Create account
+        // User creates an account
         while(!accountCreated) {
             System.out.println("\nPlease create an account. ");
             thisUser.createAccount();
-            // make user newUser and set it either before each of the methods is called
             while(!confirmRedo) {
                 System.out.println("Please CONFIRM or REDO: ");
                 String setAccount = keyboard.readLine();

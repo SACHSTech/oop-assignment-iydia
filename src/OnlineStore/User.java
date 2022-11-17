@@ -1,4 +1,4 @@
-package Online_Store;
+package OnlineStore;
 import java.io.*;
 
 public class User {

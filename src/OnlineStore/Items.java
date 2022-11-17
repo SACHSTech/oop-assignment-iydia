@@ -1,4 +1,4 @@
-package Online_Store;
+package OnlineStore;
 
 public abstract class Items {
     private int itemNumber;

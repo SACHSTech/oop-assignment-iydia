@@ -1,12 +1,12 @@
-package Online_Store;
+package OnlineStore;
 
-public class Necklace extends Items{
-    private String size;
+public class Rings extends Items{
+    private int size;
     private String material;
     private int quantity;
     private double price;
 
-    public Necklace(String size, int quantity, double price, String material) {
+    public Rings(String name, int size, int quantity, double price, String material) {
         super(quantity);
         this.size = size;
         this.quantity = quantity;
@@ -14,23 +14,12 @@ public class Necklace extends Items{
         this.material = material;
     }
 
-    public String getSize() {
-        if (size == "S"){ // NOTE: change later to ignore uppercase/lowercase
-            return "Small: 40cm";
-        } else if (size == "M"){
-            return "Medium: 50cm";
-        } else if (size == "L"){
-            return "Large: 60cm"; // LATER: add else statement
-        }
+    public int getSize() {
         return size;
     }
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(int setQuantity){
-        quantity = setQuantity;
     }
 
     public double getPrice() {
