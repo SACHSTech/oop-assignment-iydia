@@ -7,6 +7,8 @@ public class User {
     // Instance Variables
     private String username;
     private String password;
+    public String user;
+    public String pass;
 
     /**
      * Constructor that creates a new User instance
@@ -44,18 +46,5 @@ public class User {
      */
     public String toString(){
         return "Your username is [" + username + "] and your password is [" + password + "]";
-    }
-
-    /**
-     * Method to create an account and is called multiple times in main
-     */
-    public void createAccount() throws IOException{
-        System.out.println("\nUsername: ");
-        String user = keyboard.readLine();
-        System.out.println("\nPassword: ");
-        String pass = keyboard.readLine();
-        // Creates a new user with the user's input
-        User userInput = new User(user, pass);
-        System.out.println("\nYour username is [" + userInput.getUsername() + "] and password is [" + userInput.getPassword() + "].");
     }
 }

@@ -12,7 +12,7 @@ import java.io.*;
 
     public static void main(String[] args) throws IOException {
         // Initialize User
-        User thisUser = new User();
+        User thisUser;
 
         // Variables
         boolean accountCreated = false;
@@ -25,26 +25,13 @@ import java.io.*;
         System.out.println("〣  WELCOME TO THE JEWELLRY STORE 〣");
         System.out.println("〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣");
 
-        // User creates an account
-        while(!accountCreated) {
-            System.out.println("\nPlease create an account. ");
-            thisUser.createAccount();
-            while(!confirmRedo) {
-                System.out.println("Please CONFIRM or REDO: ");
-                String setAccount = keyboard.readLine();
-                if(setAccount.equalsIgnoreCase("CONFIRM")) {
-                    accountCreated = true;
-                    confirmRedo = true;
-                } else if(setAccount.equalsIgnoreCase("REDO")) {
-                    thisUser.createAccount();
-                }
-            }
-        }
+        System.out.println("\nPlease create an account. ");
+        thisUser = createAccount();
 
         // Print menu where user can access the classes
         try{
             while(pageNum == -1){
-                System.out.println("\nWelcome, " + thisUser.getUsername());
+                System.out.println("\nWelcome, " + thisUser.getUsername()); // Just remove this if it doesnt work
                 System.out.println("\n(1) Shop Products");
                 System.out.println("(2) My Account");
                 System.out.println("(3) Shopping Bag");
@@ -68,7 +55,7 @@ import java.io.*;
                 }
             } else if(pageNum == 2){
                 System.out.println("\nMy Account: ");
-                System.out.println("\n" + thisUser.toString());
+                System.out.println("\n" + thisUser.toString()); // HELP
             } else if(pageNum == 3){
                 System.out.println("\nShopping Bag: ");
             } else {
@@ -79,10 +66,24 @@ import java.io.*;
         // Products page
         if(productsPageNum != -1){
             if(productsPageNum == 1){
-                System.out.println("\nAll necklaces: "); // keep working
+                System.out.println("\nAll necklaces: "); // incomplete
             } else if(productsPageNum == 2){
-                System.out.println("\nAll rings: "); // keep working
+                System.out.println("\nAll rings: "); // incomplete
             }
-        }
+        }    
+    }
+
+    /**
+     * Method to create an account and is called multiple times in main
+     */
+    public static User createAccount() throws IOException{
+        System.out.println("\nUsername: ");
+        String user = keyboard.readLine();
+        System.out.println("\nPassword: ");
+        String pass = keyboard.readLine();
+        // Creates a new user with the user's input
+        User userInput = new User(user, pass);
+        System.out.println("\nYour username is [" + userInput.getUsername() + "] and password is [" + userInput.getPassword() + "].");
+        return userInput;
     }
 }
