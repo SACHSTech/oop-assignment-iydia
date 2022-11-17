@@ -3,8 +3,8 @@ package Online_Store;
 public abstract class Items {
     private String name;
 
-    public Items(String theName){
-        name = theName;
+    public Items(String name){
+        this.name = name;
     }
     
     /**
