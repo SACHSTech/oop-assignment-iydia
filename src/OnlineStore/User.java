@@ -20,7 +20,6 @@ public class User {
 
     // Constructor to initialize new user
     public User() {
-        super();
     }
 
     /**
@@ -59,5 +58,4 @@ public class User {
         User userInput = new User(user, pass);
         System.out.println("\nYour username is [" + userInput.getUsername() + "] and password is [" + userInput.getPassword() + "].");
     }
-
 }
