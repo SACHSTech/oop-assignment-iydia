@@ -41,7 +41,7 @@ import java.io.*;
             }
         }
 
-        // Class exploration
+        // Print menu where user can access the classes
         try{
             while(pageNum == -1){
                 System.out.println("\nWelcome, " + thisUser.getUsername());

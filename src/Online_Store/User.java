@@ -5,12 +5,17 @@ public class User {
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));;
     
     // Instance Variables
-    private static String username;
-    private static String password;
+    private String username;
+    private String password;
 
-    public User(String user, String pass){
-        username = user;
-        password = pass;
+    /**
+     * Constructor that creates a new User instance
+     * @param username username of the user
+     * @param password password of the user
+     */
+    public User(String username, String password){
+        this.username = username;
+        this.password = password;
     }
 
     // Constructor to initialize new user
@@ -34,10 +39,17 @@ public class User {
         return password;
     }
 
+    /**
+     * String representation of a User
+     * @return the username and password of a user
+     */
     public String toString(){
         return "Your username is [" + username + "] and your password is [" + password + "]";
     }
 
+    /**
+     * Method to create an account and is called multiple times in main
+     */
     public void createAccount() throws IOException{
         System.out.println("\nUsername: ");
         String user = keyboard.readLine();
