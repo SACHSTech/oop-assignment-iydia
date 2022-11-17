@@ -2,25 +2,21 @@ package Online_Store;
 import java.io.*;
 
 /**
- * Description: This program simulates an online checkout system for an online store.
- * The user can sign in, add items to their order, see the total, place an order, and track their order. 
- * They can view their billing address and see the status of their membership, for every purchase, they get some rewards points. 
- * These points can be used to redeem store credit and pay for future orders. 
+ * Description: This program simulates an online checkout system for an online jewellry store.
  * Author: L. He
  */
 
  public class Main {
     // Import BufferedReader
-    BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
-    // Variables
-    public String user;
-    public String pass;
-    boolean accountCreated = false;
-    boolean confirmRedo = false;
-    int pageNum = -1;
-
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
+        // Variables
+        String user;
+        String pass;
+        boolean accountCreated = false;
+        boolean confirmRedo = false;
+        int pageNum = -1;
 
         // Print title
         System.out.println("\n〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣〣");
@@ -63,7 +59,7 @@ import java.io.*;
         }
     }
     
-    private void accountCreation() throws IOException {
+    private static void accountCreation() throws IOException {
         System.out.println("\nUsername: ");
         String user = keyboard.readLine();
         System.out.println("\nPassword: ");
