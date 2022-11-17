@@ -51,7 +51,7 @@ import java.io.*;
                 pageNum = Integer.parseInt(keyboard.readLine());    
             }
         } catch (NumberFormatException e) {
-            System.out.println("Error! Invalid integer. Try again.");
+            System.out.println("Invalid integer. Try again: ");
             pageNum = Integer.parseInt(keyboard.readLine());    
         }
 

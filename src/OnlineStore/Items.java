@@ -4,8 +4,8 @@ public abstract class Items {
     private int itemNumber;
 
     /**
-     * Abstract parent class Items with properties that its subclasses share; and itemNumber
-     * @param itemNumber the item number (not amount)
+     * Abstract parent class Items with properties that its subclasses share
+     * @param itemNumber the item number (not quantity)
      */
     public Items(int itemNumber){
         this.itemNumber = itemNumber;
@@ -19,20 +19,28 @@ public abstract class Items {
         return itemNumber;
     }
 
-    // Abstract method for the item's quantity
+    /**
+     * Abstract method for the item's quantity
+     * @return quantity of the item
+     */
     public abstract int getQuantity();
 
-    // Abstract method for the item's price
+    /**
+     * Abstract method for the item's price
+     * @return price of the item
+     */
     public abstract double getPrice();
 
-    // Abstract method for the item's material
+    /**
+     * Abstract method for the item's material
+     * @return the material the item is made of
+     */
     public abstract String getMaterial();
 
     /**
-     * Method to list all products to the user
+     * Method lists all products to the user
      */
     public static void listProducts(){
         
     }
-    
 }
