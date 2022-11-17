@@ -7,11 +7,8 @@ public class Items {
     private double price;
     public double totalPrice;
 
-    public Items(String theName, String theSize, int theQuantity, double thePrice){
+    public Items(String theName){
         name = theName;
-        size = theSize;
-        quantity = theQuantity;
-        price = thePrice;
         totalPrice += price;
     }
     
