@@ -7,7 +7,7 @@ public class Rings extends Items{
     private double price;
 
     public Rings(String name, int size, int quantity, double price, String material) {
-        super(name);
+        super(quantity);
         this.size = size;
         this.quantity = quantity;
         this.price = price;

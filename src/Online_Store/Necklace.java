@@ -6,8 +6,8 @@ public class Necklace extends Items{
     private int quantity;
     private double price;
 
-    public Necklace(String name, String size, int quantity, double price, String material) {
-        super(name);
+    public Necklace(String size, int quantity, double price, String material) {
+        super(quantity);
         this.size = size;
         this.quantity = quantity;
         this.price = price;

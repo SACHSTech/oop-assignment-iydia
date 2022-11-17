@@ -1,18 +1,18 @@
 package Online_Store;
 
 public abstract class Items {
-    private String name;
+    private int itemNumber;
 
-    public Items(String name){
-        this.name = name;
+    public Items(int itemNumber){
+        this.itemNumber = itemNumber;
     }
     
     /**
-     * Getter method for the item's name
-     * @return name of the item
+     * Getter method for the item's item number
+     * @return item number of the item
      */
-    public String getName(){
-        return name;
+    public int getItemnumber(){
+        return itemNumber;
     }
 
     // Abstract method for the item's quantity
@@ -24,5 +24,8 @@ public abstract class Items {
     // Abstract method for the item's material
     public abstract String getMaterial();
 
+    public void listProducts(){
+
+    }
     
 }
