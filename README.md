@@ -4,7 +4,7 @@
 [*see instructions for details*](Instructions.md)
 
 *Insert Class Diagram here*  
-<img src="file:///Users/lydiahe/Downloads/Jewellry%20Store%20Class%20Diagram.jpg" alt="drawing" width="600"/>
+<img src="file:///Users/lydiahe/Downloads/OOPClassDiagram.png" width="600"/>
 
 
 ## Summary
