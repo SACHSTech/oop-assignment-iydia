@@ -20,12 +20,18 @@ import java.io.*;
         int productsPageNum = -1;
         boolean createdSilNecklace = false;
 
-        // Print title
-        System.out.println("\nWELCOME TO THE JEWELLRY STORE");
+        // Title and account creation
+        System.out.println("\nWELCOME TO THE MAINTESTER STORE");
         System.out.println("\nPlease create an account. ");
-        thisUser = createAccount();
+        System.out.print("\nUsername: ");
+        String username = keyboard.readLine();
+        System.out.print("Password: ");
+        String password = keyboard.readLine();
+        System.out.print("Email: ");
+        String email = keyboard.readLine();
+        User userInput = new User(username, password, email);
         System.out.println("\n-----------------------------------------");
-        System.out.println("Welcome, " + thisUser.getUsername());
+        System.out.println("Welcome, " + userInput.getUsername());
 
         // Print main menu where user can access the classes
         try{
@@ -96,8 +102,8 @@ import java.io.*;
                     }             
                 } else if(pageNum == 2){
                     System.out.println("-----------------------------------------");
-                    System.out.println(thisUser.getUsername() + "'s Account");
-                    System.out.println("\n" + thisUser.toString()); // add option to update information?
+                    System.out.println(userInput.getUsername() + "'s Account");
+                    System.out.println("\n" + userInput.toString()); // add option to update information?
                     System.out.println("\nEnter -1 to return to the menu:");
                     pageNum = Integer.parseInt(keyboard.readLine());    
                 } else if(pageNum == 3){
@@ -112,20 +118,5 @@ import java.io.*;
             System.out.println("Invalid integer. Try again: ");
             pageNum = Integer.parseInt(keyboard.readLine());    
         }
-    }
-
-    /**
-     * Method to create an account and is called multiple times in main
-     */
-    public static User createAccount() throws IOException{
-        System.out.print("\nUsername: ");
-        String username = keyboard.readLine();
-        System.out.print("Password: ");
-        String password = keyboard.readLine();
-        System.out.print("Email: ");
-        String email = keyboard.readLine();
-        // Creates a new user with the user's input
-        User userInput = new User(username, password, email);
-        return userInput;
     }
 }
