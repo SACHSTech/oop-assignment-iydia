@@ -3,7 +3,6 @@
 
 [*see instructions for details*](Instructions.md)
 
-*Insert Class Diagram here*  
 <img src="https://github.com/SACHSTech/oop-assignment-iydia/blob/main/OOPClassDiagram.png">
 
 ## Summary

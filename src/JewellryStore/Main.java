@@ -2,6 +2,10 @@ package JewellryStore;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Description: An online jewellry store shopping system
+ * Author: L. He
+ */
 public class Main {
     // Initialize Order
     static Order theOrder;
