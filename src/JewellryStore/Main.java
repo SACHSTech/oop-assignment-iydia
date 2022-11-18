@@ -1,4 +1,4 @@
-package OnlineStore;
+package JewellryStore;
 import java.io.*;
 import java.util.ArrayList;
 

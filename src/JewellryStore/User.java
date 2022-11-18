@@ -1,4 +1,4 @@
-package OnlineStore;
+package JewellryStore;
 
 public class User {    
     // Instance Variables
@@ -49,7 +49,7 @@ public class User {
     public void setUsername(String username){
         this.username = username;
     }
-    
+
     /**
      * Setter method for the user's password
      * @param password a new password

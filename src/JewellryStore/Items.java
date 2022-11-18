@@ -1,4 +1,4 @@
-package OnlineStore;
+package JewellryStore;
 
 public abstract class Items {
     /**

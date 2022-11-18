@@ -1,4 +1,4 @@
-package OnlineStore;
+package JewellryStore;
 
 public class Necklace extends Items{
     private int size;
