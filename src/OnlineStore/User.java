@@ -1,13 +1,10 @@
 package OnlineStore;
-import java.io.*;
 
-public class User {
-    static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));;
-    
+public class User {    
     // Instance Variables
     private String username;
     private String password;
-    public String email;
+    private String email;
 
     /**
      * Constructor that creates a new User instance
@@ -30,14 +27,6 @@ public class User {
     }
 
     /**
-     * Setter method for the user's username
-     * @param username a new username
-     */
-    public void setUsername(String username){
-        this.username = username;
-    }
-
-    /**
      * Getter method for user's password
      * @return user's password
      */
@@ -46,19 +35,27 @@ public class User {
     }
 
     /**
-     * Setter method for the user's password
-     * @param password a new password
-     */
-    public void setPassword(String password){
-        this.password = password;
-    }
-
-    /**
      * Getter method for user's email
      * @return user's email
      */
     public String getEmail(){
         return email;
+    }
+
+    /**
+     * Setter method for the user's username
+     * @param username a new username
+     */
+    public void setUsername(String username){
+        this.username = username;
+    }
+    
+    /**
+     * Setter method for the user's password
+     * @param password a new password
+     */
+    public void setPassword(String password){
+        this.password = password;
     }
 
     /**

@@ -1,28 +1,23 @@
 package OnlineStore;
 
 public abstract class Items {
-    private int itemNumber;
-
     /**
-     * Abstract parent class Items with properties that its subclasses share
-     * @param itemNumber the item number (not quantity)
+     * Abstract parent class Items with methods that its subclasses share
      */
-    public Items(int itemNumber){
-        this.itemNumber = itemNumber;
+    public Items(){
     }
     
     /**
-     * Getter method for the item's item number
-     * @return item number of the item
+     * Abstract method for the items' size
+     * @return size of the item
      */
-    public int getItemnumber(){
-        return itemNumber;
-    }
+    public abstract int getSize();
 
     /**
      * Abstract method for the item's quantity
      * @return quantity of the item
      */
+
     public abstract int getQuantity();
 
     /**
@@ -36,4 +31,9 @@ public abstract class Items {
      * @return the material the item is made of
      */
     public abstract String getMaterial();
+
+    /**
+     * Abstract method for the String representation of an item
+     */
+    public abstract String toString();
 }

@@ -2,12 +2,18 @@ package OnlineStore;
 
 public class Necklace extends Items{
     private int size;
-    private String material;
     private int quantity;
     private double price;
+    private String material;
 
+    /**
+     * Necklace constructor extends and is a subclass of Items
+     * @param size length in cm of the necklace
+     * @param quantity amount of necklace(s) 
+     * @param price price of necklace varying depending on the size/quantity
+     * @param material material of the necklace, including Sterling Silver, Gold, Platinum
+     */
     public Necklace(int size, int quantity, double price, String material) {
-        super(quantity);
         this.size = size;
         this.quantity = quantity;
         this.price = price;
@@ -30,7 +36,10 @@ public class Necklace extends Items{
         return material;
     }
 
-    public String toString(){ // do some if statements to remove quantity 0 necklaces
+    /**
+     * String representation of the necklace
+     */
+    public String toString(){
         return quantity + " " + material + " necklace(s) with " + size + "cm chain ($" + Math.round(price * 100.0) / 100.0 + ")";
     }
 }

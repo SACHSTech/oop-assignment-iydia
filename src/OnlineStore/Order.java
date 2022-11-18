@@ -8,15 +8,10 @@ public class Order {
     private int totalQuantity;
 
     public Order(double subtotal, int totalQuantity){
-        // do something like here is your order: and list in numbers and say enter that number if u wanna change anything
         this.subtotal = subtotal;
         this.totalQuantity = totalQuantity;
         total = subtotal * 1.13;
         tax = total * 0.13;
-    }
-
-    public int getTotalQuantity(){
-        return totalQuantity;
     }
 
     public double getSubtotal(){
@@ -29,6 +24,10 @@ public class Order {
 
     public double getTotal(){
         return total;
+    }
+
+    public int getTotalQuantity(){
+        return totalQuantity;
     }
 
     public String toString(){
