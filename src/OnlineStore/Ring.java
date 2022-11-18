@@ -38,6 +38,6 @@ public class Ring extends Items{
     }
 
     public String toString(){
-        return quantity + " " + material + " ring(s) with " + size + "mm diameter ($" + price + ")";
+        return quantity + " " + material + " ring(s) with " + size + "mm diameter ($" + Math.round(price * 100.0) / 100.0 + ")";
     }
 }

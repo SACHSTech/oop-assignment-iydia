@@ -26,7 +26,7 @@ import java.util.ArrayList;
         double subtotal = 0;
 
         // Title and account creation
-        System.out.println("\nWELCOME TO THE JEWELLRY STORE");
+        System.out.println("\nWELCOME TO THE JEWELRY STORE");
         System.out.println("\nPlease create an account. ");
         System.out.print("\nUsername: ");
         String username = keyboard.readLine();
@@ -35,12 +35,13 @@ import java.util.ArrayList;
         System.out.print("Email: ");
         String email = keyboard.readLine();
         User userInput = new User(username, password, email);
-        System.out.println("\n-----------------------------------------");
-        System.out.println("Welcome, " + userInput.getUsername());
+        System.out.println("\nWelcome, " + userInput.getUsername());
 
-        // Print main menu where user can access the classes
+        // Print homepage where user can access the classes
         try{
             while(pageNum == -1){
+                System.out.println("-----------------------------------------");
+                System.out.println("\nJewelry Store Homepage");
                 System.out.println("\n(1) Shop Products");
                 System.out.println("(2) My Account");
                 System.out.println("(3) Shopping Bag");
@@ -49,7 +50,7 @@ import java.util.ArrayList;
                 pageNum = Integer.parseInt(keyboard.readLine());   
                 if(pageNum == 1){
                     System.out.println("-----------------------------------------");
-                    System.out.println("All products: ");
+                    System.out.println("\nAll products: ");
                     System.out.println("\n(1) Shop necklaces");
                     System.out.println("(2) Shop rings");
                     System.out.println("\n-----------------------------------------");
@@ -58,7 +59,7 @@ import java.util.ArrayList;
                     if(productsPageNum == 1){
                         System.out.println("-----------------------------------------");
                         System.out.println("\nChoose a material for your necklace: ");
-                        System.out.println("(1) Sterling Silver (Default)");
+                        System.out.println("\n(1) Sterling Silver (Default)");
                         System.out.println("(2) Gold");
                         System.out.println("(3) Platinum");
                         System.out.println("\n-----------------------------------------");
@@ -73,7 +74,7 @@ import java.util.ArrayList;
                         }
                         System.out.println("-----------------------------------------");
                         System.out.println("\nChoose a chain length: ");
-                        System.out.println("(1) 30cm (Short) (Default)");
+                        System.out.println("\n(1) 30cm (Short) (Default)");
                         System.out.println("(2) 40cm (Medium)");
                         System.out.println("(3) 50cm (Long)");
                         System.out.println("\n-----------------------------------------");
@@ -86,7 +87,7 @@ import java.util.ArrayList;
                         } else { // If user input is invalid, automatic size is the default size
                             necklaceSize = 30;
                         }
-                        System.out.print("How many would you like to purchase?: ");
+                        System.out.print("\nHow many would you like to purchase?: ");
                         int necklaceQuantity = Integer.parseInt(keyboard.readLine());
                         double necklacePrice = (double)necklaceQuantity * 24.99;
                         if(necklaceSize == 40){  // Adds $2.99 to the price for every 10cm longer chain
@@ -102,7 +103,7 @@ import java.util.ArrayList;
                         totalUniqueProducts += 1;
                         theOrder = new Order(subtotal, totalQuantity);
                         shoppingBag.add(necklaceOrder.toString());
-                        System.out.println("Enter -1 to return to the menu:");
+                        System.out.print("\nEnter -1 to return to the homepage: ");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == 2){
                         System.out.println("-----------------------------------------");
@@ -135,7 +136,7 @@ import java.util.ArrayList;
                         } else { // If user input is invalid, the automatic size is the default size
                             ringSize = 16;
                         }
-                        System.out.print("How many would you like to purchase?: ");
+                        System.out.print("\nHow many would you like to purchase?: ");
                         int ringQuantity = Integer.parseInt(keyboard.readLine());
                         double ringPrice = (double)ringQuantity * 14.99;
                         if(ringSize == 17){  // Adds $0.49 to the price for every size up from size 6
@@ -151,7 +152,7 @@ import java.util.ArrayList;
                         totalUniqueProducts += 1;
                         theOrder = new Order(subtotal, totalQuantity);
                         shoppingBag.add(ringOrder.toString());
-                        System.out.println("Enter -1 to return to the menu:");
+                        System.out.print("\nEnter -1 to return to the homepage: ");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == -1){
                         pageNum = -1;
@@ -160,7 +161,7 @@ import java.util.ArrayList;
                     System.out.println("-----------------------------------------");
                     System.out.println(userInput.getUsername() + "'s Account");
                     System.out.println("\n" + userInput.toString()); // add option to update information?
-                    System.out.println("\nEnter -1 to return to the menu:");
+                    System.out.print("\nEnter -1 to return to the homepage: ");
                     pageNum = Integer.parseInt(keyboard.readLine());    
                 } else if(pageNum == 3){
                     System.out.println("-----------------------------------------");
@@ -170,20 +171,21 @@ import java.util.ArrayList;
                             System.out.println("● " + shoppingBag.get(i)); 		
                         }   
                         System.out.println(theOrder.toString());
-                        System.out.println("\nDone shopping? Enter 0 to checkout");
+                        System.out.println("\nDone shopping? Enter 0 to checkout.");
                     } else {
                         System.out.println("Bag is empty. ");
                     }
-                    System.out.println("\nContinue Shopping? Enter -1 to return to the menu:");
+                    System.out.print("\nContinue Shopping? Enter -1 to return to the homepage: ");
                     pageNum = Integer.parseInt(keyboard.readLine());    
-                    if(pageNum ==0){
+                    if(pageNum == 0){
                         System.out.println("\n-----------------------------------------");
-                        System.out.println("Order placed. Check your email " + userInput.getEmail() + " for billing instructions.");
+                        System.out.print("Order placed. Check your email " + userInput.getEmail() + " for billing instructions.");
                     }
                 }
             }
         } catch (NumberFormatException e) {
             System.out.println("Invalid integer. Try again: ");
+        } finally {
             pageNum = Integer.parseInt(keyboard.readLine());    
         }
     }

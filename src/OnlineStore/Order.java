@@ -3,10 +3,8 @@ package OnlineStore;
 public class Order {
     // Instance Variables
     private double subtotal;
+    private double tax;
     private double total;
-    private boolean placeOrder;
-    private boolean isDelivered;
-    private String orderStatus;
     private int totalQuantity;
 
     public Order(double subtotal, int totalQuantity){
@@ -14,6 +12,7 @@ public class Order {
         this.subtotal = subtotal;
         this.totalQuantity = totalQuantity;
         total = subtotal * 1.13;
+        tax = total * 0.13;
     }
 
     public int getTotalQuantity(){
@@ -24,12 +23,16 @@ public class Order {
         return subtotal;
     }
 
+    public double getTax(){
+        return tax;
+    }
+
     public double getTotal(){
         return total;
     }
 
     public String toString(){
-        return "\nThere are " + totalQuantity + " item(s) in the bag\nSubtotal: $" + Math.round(subtotal * 100.0) / 100.0 + "\nTotal: $" + Math.round(total * 100.0) / 100.0;
+        return "\nThere are " + totalQuantity + " item(s) in the bag\nSubtotal: $" + Math.round(subtotal * 100.0) / 100.0 + "\nTax: $" + Math.round(tax * 100.0) / 100.0 + "\nTotal: $" + Math.round(total * 100.0) / 100.0;
 
     }
 }
