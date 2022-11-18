@@ -2,13 +2,15 @@ package JewellryStore;
 import java.io.*;
 import java.util.ArrayList;
 
- public class Main {
+public class Main {
+    // Initialize Order
     static Order theOrder;
     
     // Import BufferedReader
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));;
 
     public static void main(String[] args) throws IOException {
+        // Create arraylist for user's shopping bag
         ArrayList<String> shoppingBag = new ArrayList<String>( );
 
         // Variables
