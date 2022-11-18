@@ -35,6 +35,6 @@ public class Necklace extends Items{
     }
 
     public String toString(){ // do some if statements to remove quantity 0 necklaces
-        return "$" + price + ": " + quantity + " " + material + " necklace(s) with " + size + "cm chain";
+        return quantity + " " + material + " necklace(s) with " + size + "cm chain ($" + price + ")";
     }
 }

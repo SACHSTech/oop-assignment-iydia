@@ -13,5 +13,4 @@ public class Order {
         this.total = total;
         this.orderStatus = orderStatus;
     }
-    
 }
