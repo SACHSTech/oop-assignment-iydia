@@ -2,11 +2,6 @@ package JewellryStore;
 import java.io.*;
 import java.util.ArrayList;
 
-/**
- * Description: This program simulates an online checkout system for an online jewellry store.
- * Author: L. He
- */
-
  public class Main {
     static Order theOrder;
     
