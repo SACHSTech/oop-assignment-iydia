@@ -37,6 +37,14 @@ public class User {
     }
 
     /**
+     * Getter method for user's email
+     * @return user's email
+     */
+    public String getEmail(){
+        return email;
+    }
+
+    /**
      * String representation of a User
      * @return the username and password of a user
      */

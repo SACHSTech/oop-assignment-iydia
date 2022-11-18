@@ -1,5 +1,4 @@
 package OnlineStore;
-import java.lang.Math.*;
 
 public class Necklace extends Items{
     private int size;
@@ -21,10 +20,6 @@ public class Necklace extends Items{
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(int setQuantity){
-        quantity = setQuantity;
     }
 
     public double getPrice() {

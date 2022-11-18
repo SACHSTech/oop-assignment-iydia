@@ -164,18 +164,22 @@ import java.util.ArrayList;
                     pageNum = Integer.parseInt(keyboard.readLine());    
                 } else if(pageNum == 3){
                     System.out.println("-----------------------------------------");
-                    System.out.println("\nShopping Bag: ");
                     if(totalQuantity > 0){ // Preventing crashes when nothings in the bag
-                        System.out.println(theOrder.toString());
                         System.out.println("\nYour items: ");
                         for (int i = 0; i < totalUniqueProducts; i++){ 		      
                             System.out.println("● " + shoppingBag.get(i)); 		
                         }   
+                        System.out.println(theOrder.toString());
+                        System.out.println("\nDone shopping? Enter 0 to checkout");
                     } else {
-                        System.out.println("Bag is empty. Go to Shop Products to shop products.");
+                        System.out.println("Bag is empty. ");
                     }
-                    System.out.println("\nEnter -1 to return to the menu:");
+                    System.out.println("\nContinue Shopping? Enter -1 to return to the menu:");
                     pageNum = Integer.parseInt(keyboard.readLine());    
+                    if(pageNum ==0){
+                        System.out.println("\n-----------------------------------------");
+                        System.out.println("Order placed. Check your email " + userInput.getEmail() + " for billing instructions.");
+                    }
                 }
             }
         } catch (NumberFormatException e) {
