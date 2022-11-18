@@ -1,5 +1,6 @@
 package OnlineStore;
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Description: This program simulates an online checkout system for an online jewellry store.
@@ -13,7 +14,7 @@ import java.io.*;
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));;
 
     public static void main(String[] args) throws IOException {
-        int[] arrTotalQuantity = new int[6];
+        ArrayList<String> shoppingBag = new ArrayList<String>( );
 
         // Variables
         String necklaceMaterial;
@@ -22,7 +23,6 @@ import java.io.*;
         int productsPageNum = -1;
         int totalQuantity = 0;
         double subtotal = 0;
-        boolean createdSilNecklace = false;
 
         // Title and account creation
         System.out.println("\nWELCOME TO THE JEWELLRY STORE");
@@ -99,6 +99,7 @@ import java.io.*;
                         System.out.println("\n" + necklaceOrder.toString() + " added to bag.");
                         totalQuantity += necklaceQuantity;
                         theOrder = new Order(subtotal, totalQuantity);
+                        shoppingBag.add(necklaceOrder.toString());
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == 2){
@@ -146,6 +147,7 @@ import java.io.*;
                         System.out.println("\n" + ringOrder.toString() + " added to bag.");
                         totalQuantity += ringQuantity;
                         theOrder = new Order(subtotal, totalQuantity);
+                        shoppingBag.add(ringOrder.toString());
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == -1){
@@ -161,6 +163,7 @@ import java.io.*;
                     System.out.println("-----------------------------------------");
                     System.out.println("\nShopping Bag: ");
                     System.out.println(theOrder.toString());
+                    System.out.println(shoppingBag);
                     System.out.println("\nEnter -1 to return to the menu:");
                     pageNum = Integer.parseInt(keyboard.readLine());    
                 }
