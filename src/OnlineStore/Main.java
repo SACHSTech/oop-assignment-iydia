@@ -22,6 +22,7 @@ import java.util.ArrayList;
         int pageNum = -1;
         int productsPageNum = -1;
         int totalQuantity = 0;
+        int totalUniqueProducts = 0;
         double subtotal = 0;
 
         // Title and account creation
@@ -56,8 +57,8 @@ import java.util.ArrayList;
                     productsPageNum = Integer.parseInt(keyboard.readLine());
                     if(productsPageNum == 1){
                         System.out.println("-----------------------------------------");
-                        System.out.println("Choose a material for your necklace: ");
-                        System.out.println("\n(1) Sterling Silver (Default)");
+                        System.out.println("\nChoose a material for your necklace: ");
+                        System.out.println("(1) Sterling Silver (Default)");
                         System.out.println("(2) Gold");
                         System.out.println("(3) Platinum");
                         System.out.println("\n-----------------------------------------");
@@ -98,14 +99,15 @@ import java.util.ArrayList;
                         System.out.println("-----------------------------------------");
                         System.out.println("\n" + necklaceOrder.toString() + " added to bag.");
                         totalQuantity += necklaceQuantity;
+                        totalUniqueProducts += 1;
                         theOrder = new Order(subtotal, totalQuantity);
                         shoppingBag.add(necklaceOrder.toString());
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == 2){
                         System.out.println("-----------------------------------------");
-                        System.out.println("Choose a material for your ring: ");
-                        System.out.println("\n(1) Sterling Silver (Default)");
+                        System.out.println("\nChoose a material for your ring: ");
+                        System.out.println("(1) Sterling Silver (Default)");
                         System.out.println("(2) Gold");
                         System.out.println("(3) Rose Gold");
                         System.out.println("\n-----------------------------------------");
@@ -146,6 +148,7 @@ import java.util.ArrayList;
                         System.out.println("-----------------------------------------");
                         System.out.println("\n" + ringOrder.toString() + " added to bag.");
                         totalQuantity += ringQuantity;
+                        totalUniqueProducts += 1;
                         theOrder = new Order(subtotal, totalQuantity);
                         shoppingBag.add(ringOrder.toString());
                         System.out.println("Enter -1 to return to the menu:");
@@ -162,8 +165,15 @@ import java.util.ArrayList;
                 } else if(pageNum == 3){
                     System.out.println("-----------------------------------------");
                     System.out.println("\nShopping Bag: ");
-                    System.out.println(theOrder.toString());
-                    System.out.println(shoppingBag);
+                    if(totalQuantity > 0){ // Preventing crashes when nothings in the bag
+                        System.out.println(theOrder.toString());
+                        System.out.println("\nYour items: ");
+                        for (int i = 0; i < totalUniqueProducts; i++){ 		      
+                            System.out.println("● " + shoppingBag.get(i)); 		
+                        }   
+                    } else {
+                        System.out.println("Bag is empty. Go to Shop Products to shop products.");
+                    }
                     System.out.println("\nEnter -1 to return to the menu:");
                     pageNum = Integer.parseInt(keyboard.readLine());    
                 }
