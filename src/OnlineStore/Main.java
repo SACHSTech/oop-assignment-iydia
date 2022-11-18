@@ -15,7 +15,8 @@ import java.io.*;
         User thisUser;
 
         // Variables
-        String material;
+        String necklaceMaterial;
+        String ringMaterial;
         int pageNum = -1;
         int productsPageNum = -1;
         boolean createdSilNecklace = false;
@@ -58,13 +59,13 @@ import java.io.*;
                         System.out.println("(3) Platinum");
                         System.out.println("\n-----------------------------------------");
                         System.out.print("Enter an option number: ");
-                        int necklaceMaterial = Integer.parseInt(keyboard.readLine());
-                        if(necklaceMaterial == 2){
-                            material = "Gold";
-                        } else if(necklaceMaterial == 3){
-                            material = "Platinum";
+                        int neckMaterial = Integer.parseInt(keyboard.readLine());
+                        if(neckMaterial == 2){
+                            necklaceMaterial = "Gold";
+                        } else if(neckMaterial == 3){
+                            necklaceMaterial = "Platinum";
                         } else { // If user input is invalid, automatic necklace material is the default material
-                            material = "Sterling Silver";
+                            necklaceMaterial = "Sterling Silver";
                         }
                         System.out.println("-----------------------------------------");
                         System.out.println("\nChoose a chain length: ");
@@ -73,29 +74,71 @@ import java.io.*;
                         System.out.println("(3) 50cm (Long)");
                         System.out.println("\n-----------------------------------------");
                         System.out.print("Enter an option number: ");
-                        int size = Integer.parseInt(keyboard.readLine());
-                        if (size == 2){ // Size cm calculation for toString
-                            size = 40;
-                        } else if (size == 3){
-                            size = 50;
+                        int necklaceSize = Integer.parseInt(keyboard.readLine());
+                        if (necklaceSize == 2){ // Size cm calculation for toString
+                            necklaceSize = 40;
+                        } else if (necklaceSize == 3){
+                            necklaceSize = 50;
                         } else { // If user input is invalid, automatic size is the default size
-                            size = 30;
+                            necklaceSize = 30;
                         }
                         System.out.print("How many would you like to purchase?: ");
-                        int quantity = Integer.parseInt(keyboard.readLine());
-                        double price = (double)quantity * 24.99;
-                        if(size == 40){  // Adds $2.99 to the price for every 10cm longer chain
-                            price+=(2.99 * quantity);
-                        } else if(size == 50){
-                            price+=(5.98 * quantity);
+                        int necklaceQuantity = Integer.parseInt(keyboard.readLine());
+                        double necklacePrice = (double)necklaceQuantity * 24.99;
+                        if(necklaceSize == 40){  // Adds $2.99 to the price for every 10cm longer chain
+                            necklacePrice += (2.99 * necklaceQuantity);
+                        } else if(necklaceSize == 50){
+                            necklacePrice += (2.99 * 2 * necklaceQuantity);
                         }
-                        Necklace userNecklace = new Necklace(size, quantity, price, material);
+                        Necklace necklaceOrder = new Necklace(necklaceSize, necklaceQuantity, necklacePrice, necklaceMaterial);
                         System.out.println("-----------------------------------------");
-                        System.out.println("\n" + userNecklace.toString() + " added to bag.");
+                        System.out.println("\n" + necklaceOrder.toString() + " added to bag.");
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == 2){
-                        System.out.println("\nAll rings: "); // incomplete
+                        System.out.println("-----------------------------------------");
+                        System.out.println("Choose a material for your ring: ");
+                        System.out.println("\n(1) Sterling Silver (Default)");
+                        System.out.println("(2) Gold");
+                        System.out.println("(3) Rose Gold");
+                        System.out.println("\n-----------------------------------------");
+                        System.out.print("Enter an option number: ");
+                        int ringInputMaterial = Integer.parseInt(keyboard.readLine());
+                        if(ringInputMaterial == 2){
+                            ringMaterial = "Gold";
+                        } else if(ringInputMaterial == 3){
+                            ringMaterial = "Rose Gold";
+                        } else { // If user input is invalid, automatic ring material is the default material
+                            ringMaterial = "Sterling Silver";
+                        }
+                        System.out.println("-----------------------------------------");
+                        System.out.println("\nChoose a ring size: ");
+                        System.out.println("(1) Small: 16mm diameter, size 6");
+                        System.out.println("(2) Medium : 17mm diameter, size 7 (Default)");
+                        System.out.println("(3) Large: 18mm diameter, size 8");
+                        System.out.println("\n-----------------------------------------");
+                        System.out.print("Enter an option number: ");
+                        int ringSize = Integer.parseInt(keyboard.readLine());
+                        if (ringSize == 2){ // Size mm calculation for toString
+                            ringSize = 17;
+                        } else if (ringSize == 3){
+                            ringSize = 18;
+                        } else { // If user input is invalid, the automatic size is the default size
+                            ringSize = 16;
+                        }
+                        System.out.print("How many would you like to purchase?: ");
+                        int ringQuantity = Integer.parseInt(keyboard.readLine());
+                        double ringPrice = (double)ringQuantity * 14.99;
+                        if(ringSize == 17){  // Adds $0.49 to the price for every size up from size 6
+                            ringPrice += (0.49 * ringQuantity);
+                        } else if(ringSize == 18){
+                            ringPrice += (0.49 * 2 * ringQuantity);
+                        }
+                        Ring ringOrder = new Ring(ringSize, ringQuantity, ringPrice, ringMaterial);
+                        System.out.println("-----------------------------------------");
+                        System.out.println("\n" + ringOrder.toString() + " added to bag.");
+                        System.out.println("Enter -1 to return to the menu:");
+                        pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == -1){
                         pageNum = -1;
                     }             

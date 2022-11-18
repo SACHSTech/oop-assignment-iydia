@@ -1,12 +1,12 @@
 package OnlineStore;
 
-public class Rings extends Items{
+public class Ring extends Items{
     private int size;
     private String material;
     private int quantity;
     private double price;
 
-    public Rings(String name, int size, int quantity, double price, String material) {
+    public Ring(int size, int quantity, double price, String material) {
         super(quantity);
         this.size = size;
         this.quantity = quantity;
@@ -35,5 +35,9 @@ public class Rings extends Items{
             return "Platinum";
         }
         return material;
+    }
+
+    public String toString(){
+        return quantity + " " + material + " ring(s) with " + size + "mm diameter ($" + price + ")";
     }
 }
