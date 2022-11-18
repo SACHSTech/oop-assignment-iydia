@@ -97,7 +97,7 @@ import java.io.*;
                         Necklace necklaceOrder = new Necklace(necklaceSize, necklaceQuantity, necklacePrice, necklaceMaterial);
                         System.out.println("-----------------------------------------");
                         System.out.println("\n" + necklaceOrder.toString() + " added to bag.");
-                        totalQuantity += 1;
+                        totalQuantity += necklaceQuantity;
                         theOrder = new Order(subtotal, totalQuantity);
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
@@ -140,9 +140,12 @@ import java.io.*;
                         } else if(ringSize == 18){
                             ringPrice += (0.49 * 2 * ringQuantity);
                         }
+                        subtotal += ringPrice;
                         Ring ringOrder = new Ring(ringSize, ringQuantity, ringPrice, ringMaterial);
                         System.out.println("-----------------------------------------");
                         System.out.println("\n" + ringOrder.toString() + " added to bag.");
+                        totalQuantity += ringQuantity;
+                        theOrder = new Order(subtotal, totalQuantity);
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == -1){
