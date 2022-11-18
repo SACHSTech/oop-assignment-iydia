@@ -7,18 +7,21 @@ import java.io.*;
  */
 
  public class Main {
+    static Order theOrder;
+    
     // Import BufferedReader
     static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));;
 
     public static void main(String[] args) throws IOException {
-        // Initialize User
-        User thisUser;
+        int[] arrTotalQuantity = new int[6];
 
         // Variables
         String necklaceMaterial;
         String ringMaterial;
         int pageNum = -1;
         int productsPageNum = -1;
+        int totalQuantity = 0;
+        double subtotal = 0;
         boolean createdSilNecklace = false;
 
         // Title and account creation
@@ -90,9 +93,12 @@ import java.io.*;
                         } else if(necklaceSize == 50){
                             necklacePrice += (2.99 * 2 * necklaceQuantity);
                         }
+                        subtotal += necklacePrice;
                         Necklace necklaceOrder = new Necklace(necklaceSize, necklaceQuantity, necklacePrice, necklaceMaterial);
                         System.out.println("-----------------------------------------");
                         System.out.println("\n" + necklaceOrder.toString() + " added to bag.");
+                        totalQuantity += 1;
+                        theOrder = new Order(subtotal, totalQuantity);
                         System.out.println("Enter -1 to return to the menu:");
                         pageNum = Integer.parseInt(keyboard.readLine());
                     } else if(productsPageNum == 2){
@@ -151,6 +157,7 @@ import java.io.*;
                 } else if(pageNum == 3){
                     System.out.println("-----------------------------------------");
                     System.out.println("\nShopping Bag: ");
+                    System.out.println(theOrder.toString());
                     if(createdSilNecklace == true){
                         //silverNecklace.toString();
                     }
