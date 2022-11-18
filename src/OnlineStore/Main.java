@@ -40,8 +40,8 @@ import java.util.ArrayList;
         // Print homepage where user can access the classes
         try{
             while(pageNum == -1){
-                System.out.println("-----------------------------------------");
-                System.out.println("\nJewelry Store Homepage");
+                System.out.println("\n-----------------------------------------");
+                System.out.println("Jewelry Store Homepage");
                 System.out.println("\n(1) Shop Products");
                 System.out.println("(2) My Account");
                 System.out.println("(3) Shopping Bag");
@@ -159,10 +159,37 @@ import java.util.ArrayList;
                     }             
                 } else if(pageNum == 2){
                     System.out.println("-----------------------------------------");
-                    System.out.println(userInput.getUsername() + "'s Account");
-                    System.out.println("\n" + userInput.toString()); // add option to update information?
-                    System.out.print("\nEnter -1 to return to the homepage: ");
+                    System.out.println("\n" + userInput.getUsername() + "'s Account");
+                    System.out.println("\n" + userInput.toString());
+                    System.out.print("\nNew email? Enter 0 to update information. Continue Shopping? Enter -1 to return to homepage: ");
                     pageNum = Integer.parseInt(keyboard.readLine());    
+                    if(pageNum == 0){
+                        System.out.println("\n" + userInput.getUsername() + "'s Account");
+                        System.out.println("\n(1) Set new username");
+                        System.out.println("(2) Set new password");
+                        System.out.println("(3) Set new email");
+                        System.out.print("\nEnter an option number: ");
+                        int setAccount = Integer.parseInt(keyboard.readLine());
+                        if(setAccount == 1){
+                            System.out.print("\nEnter a new username: ");
+                            String newUsername = keyboard.readLine();
+                            userInput.setUsername(newUsername);
+                            System.out.print("\nUsername updated. Enter -1 to return to homepage: ");
+                            pageNum = Integer.parseInt(keyboard.readLine());  
+                        } else if(setAccount == 2){
+                            System.out.print("\nEnter a new password: ");
+                            String newPassword = keyboard.readLine();
+                            userInput.setPassword(newPassword);
+                            System.out.print("\nPassword updated. Enter -1 to return to homepage: ");
+                            pageNum = Integer.parseInt(keyboard.readLine());  
+                        } else if(setAccount == 3){
+                            System.out.print("\nEnter a new email: ");
+                            String newEmail = keyboard.readLine();
+                            userInput.setEmail(newEmail);
+                            System.out.print("\nPassword updated. Enter -1 to return to homepage: ");
+                            pageNum = Integer.parseInt(keyboard.readLine());  
+                        }
+                    }
                 } else if(pageNum == 3){
                     System.out.println("-----------------------------------------");
                     if(totalQuantity > 0){ // Preventing crashes when nothings in the bag
