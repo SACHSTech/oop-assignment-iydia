@@ -1,4 +1,5 @@
 package OnlineStore;
+import java.lang.Math.*;
 
 public class Necklace extends Items{
     private int size;
@@ -35,6 +36,6 @@ public class Necklace extends Items{
     }
 
     public String toString(){ // do some if statements to remove quantity 0 necklaces
-        return quantity + " " + material + " necklace(s) with " + size + "cm chain ($" + price + ")";
+        return quantity + " " + material + " necklace(s) with " + size + "cm chain ($" + Math.round(price * 100.0) / 100.0 + ")";
     }
 }

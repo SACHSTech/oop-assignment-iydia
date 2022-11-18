@@ -24,7 +24,7 @@ public class Order {
     }
 
     public String toString(){
-        return "\nThere are " + totalQuantity + " item(s) in the bag\nSubtotal: $" + subtotal;
+        return "\nThere are " + totalQuantity + " item(s) in the bag\nSubtotal: $" + Math.round(subtotal * 100.0) / 100.0;
 
     }
 }

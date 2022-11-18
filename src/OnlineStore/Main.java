@@ -158,9 +158,8 @@ import java.io.*;
                     System.out.println("-----------------------------------------");
                     System.out.println("\nShopping Bag: ");
                     System.out.println(theOrder.toString());
-                    if(createdSilNecklace == true){
-                        //silverNecklace.toString();
-                    }
+                    System.out.println("\nEnter -1 to return to the menu:");
+                    pageNum = Integer.parseInt(keyboard.readLine());    
                 }
             }
         } catch (NumberFormatException e) {
